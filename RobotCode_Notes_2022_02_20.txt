@@ -1,0 +1,64 @@
+2/20/2022   JAS  Robot Code Notes.
+
+General
+	-- implement a trajectory following VI similar to DriveForwardDistance.
+
+Team Code
+	Teleop
+	-- DONT USE GLOBAL VARIABLES in this VI.  Call your "setter" VIs !!!!
+
+
+DriveSystem
+	DriveForwardDistance
+	-- Use setter and getter VI instead of global variables...
+	-- Implement calculation for Threshold Error input (Currently hardcoded
+		at 7.0) as a function of max speed so routine behaves the same
+		regardless what the users passes as max speed.  In other words
+		keep the "slope" of the slow down function the same and start
+		the slow down at a different threshold error value depending
+		on what max speed the user passes...
+	
+
+	ExecuteSpeed
+	-- If there is time, the PID could be tuned a little.
+		Ki can probably be larger..  (maybe between 1 and 2)
+	-- Add a global variable to indicate Auto(closed loop)/Manual(open loop).  
+		Use this to switch.  Initialize to auto.  Write state to network 
+		tables.
+
+	GetDrive
+	-- Calibrate Lidar
+
+	SetDistanceFromWall
+
+	-- Use setter and getter VI instead of global variables...
+	-- Implement calculation for Threshold Error input (Currently hardcoded
+		at 7.0) as a function of max speed so routine behaves the same
+		regardless what the users passes as max speed.  In other words
+		keep the "slope" of the slow down function the same and start
+		the slow down at a different threshold error value depending
+		on what max speed the user passes...
+	
+	
+	TurnDistance.
+
+	-- Use setter and getter VI instead of global variables...
+	-- Implement calculation for Threshold Error input (Currently hardcoded
+		at 45) as a function of max speed so routine behaves the same
+		regardless what the users passes as max speed.  In other words
+		keep the "slope" of the slow down function the same and start
+		the slow down at a different threshold error value depending
+		on what max speed the user passes...  (It doesn't matter that
+		the error is degrees and speed is ft/sec...slope is still slope.)
+
+Autonomous
+	
+	DropIntake
+	-- use setter VI not global variable.
+
+Auxiliary
+
+	GetAux
+	-- add filtering after shooter speed calculation
+
+
